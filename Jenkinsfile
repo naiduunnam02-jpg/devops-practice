@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -9,7 +8,18 @@ pipeline {
                 sh '''
                     mkdir -p build
                     javac -d build java/HelloWorld.java
-                    java -cp build HelloWorld
+                '''
+            }
+        }
+
+        stage('Test Java Application') {
+            steps {
+                echo 'Testing Java application...'
+                sh '''
+                    output=$(java -cp build HelloWorld)
+                    echo "$output"
+                    echo "$output" | grep -q "Hello DevOps!"
+                    echo "Test passed successfully!"
                 '''
             }
         }
