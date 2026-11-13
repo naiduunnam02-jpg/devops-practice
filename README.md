@@ -17,3 +17,4 @@ My hands-on DevOps learning project.
 - jenkins: Jenkins jobs and pipelines
 - tomcat: Tomcat applications and configuration
 GitHub Webhook CI/CD test
+Testing automatic Jenkins Pipeline
